@@ -432,7 +432,152 @@ footer h3 {
     .course-pack {
         padding: 20px;
     }
+/* ================= SIMPLE COURSE PACK ================= */
 
+.course-pack-simple {
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.subject-large-icon {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+}
+
+
+.course-pack-simple h1 {
+
+    font-size: 40px;
+
+    color: #93c5fd;
+
+    margin-bottom: 10px;
+}
+
+
+.course-pack-simple h2 {
+
+    font-size: 20px;
+
+    color: #cbd5e1;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+
+.faculty {
+
+    color: #e2e8f0;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= PDF BUTTONS ================= */
+
+.pdf-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.pdf-buttons a {
+
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.view-pdf {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+
+.view-pdf:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-3px);
+}
+
+
+.download-pdf {
+
+    background: #16a34a;
+
+    color: white;
+}
+
+
+.download-pdf:hover {
+
+    background: #15803d;
+
+    transform: translateY(-3px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .course-pack-simple h1 {
+
+        font-size: 30px;
+    }
+
+    .pdf-buttons {
+
+        flex-direction: column;
+    }
+
+    .pdf-buttons a {
+
+        width: 100%;
+    }
+}
     .course-pack-header h1 {
         font-size: 30px;
     }
