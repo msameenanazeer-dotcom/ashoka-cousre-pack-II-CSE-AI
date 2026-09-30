@@ -1,264 +1,178 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ashoka Course Packs</title>
+```
+<title>Ashoka Course Pack - II CSE AI</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f5f9;
+        margin: 0;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #222;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .subjects {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .subject {
+        background: white;
+        margin: 18px 0;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+
+    .subject h2 {
+        margin: 0 0 8px;
+        color: #1f2937;
+    }
+
+    .faculty {
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .buttons a {
+        display: inline-block;
+        padding: 10px 18px;
+        margin: 5px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: white;
+        background: #2563eb;
+    }
+
+    .buttons a:hover {
+        background: #1d4ed8;
+    }
+
+    .buttons .download {
+        background: #16a34a;
+    }
+
+    .buttons .download:hover {
+        background: #15803d;
+    }
+</style>
+```
+
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+```
+<h1>📚 Ashoka Course Pack</h1>
 
-<header class="hero">
-    <div class="hero-content">
-        <h1>🎓 Ashoka Course Packs</h1>
+<div class="subtitle">
+    II CSE - Artificial Intelligence
+</div>
 
-        <p>
-            Learn • Access Course Materials • Download Notes • Study
-        </p>
+<div class="subjects">
 
-        <button class="main-button" onclick="showCoursePacks()">
-            📚 Course Pack
-        </button>
+    <!-- ADSA -->
+    <div class="subject">
+        <h2>ADSA</h2>
+        <div class="faculty">Faculty: Rangi Mam</div>
+
+        <div class="buttons">
+            <a href="pdfs/ADSA.pdf" target="_blank">
+                📄 View PDF
+            </a>
+
+            <a href="pdfs/ADSA.pdf" download class="download">
+                ⬇ Download PDF
+            </a>
+        </div>
     </div>
-</header>
 
 
-<!-- ================= MAIN CONTENT ================= -->
+    <!-- UHV -->
+    <div class="subject">
+        <h2>UHV</h2>
+        <div class="faculty">Faculty: Nitya</div>
 
-<main>
+        <div class="buttons">
+            <a href="pdfs/UHV.pdf" target="_blank">
+                📄 View PDF
+            </a>
 
-    <!-- HOME -->
-    <section id="home" class="page-section">
-
-        <h2>Welcome to Ashoka Course Packs</h2>
-
-        <p class="intro">
-            Select <b>Course Pack</b> to access course materials
-            according to your branch and subject.
-        </p>
-
-        <button class="big-button" onclick="showCoursePacks()">
-            📚 Open Course Packs
-        </button>
-
-    </section>
-
-
-    <!-- ================= BRANCHES ================= -->
-
-    <section id="branches" class="page-section hidden">
-
-        <button class="back-button" onclick="goHome()">
-            ← Home
-        </button>
-
-        <h2>📚 Course Packs</h2>
-
-        <p>Select your branch</p>
-
-        <div class="card-container">
-
-            <div class="branch-card" onclick="showBranch('CSE')">
-                <div class="icon">💻</div>
-                <h3>CSE</h3>
-                <p>Computer Science and Engineering</p>
-            </div>
-
-
-            <div class="branch-card" onclick="showBranch('CSE-AI')">
-                <div class="icon">🤖</div>
-                <h3>CSE (AI)</h3>
-                <p>Computer Science and Engineering – Artificial Intelligence</p>
-            </div>
-
-
-            <div class="branch-card" onclick="showBranch('ECE')">
-                <div class="icon">📡</div>
-                <h3>ECE</h3>
-                <p>Electronics and Communication Engineering</p>
-            </div>
-
-
-            <div class="branch-card" onclick="showBranch('EEE')">
-                <div class="icon">⚡</div>
-                <h3>EEE</h3>
-                <p>Electrical and Electronics Engineering</p>
-            </div>
-
-
-            <div class="branch-card" onclick="showBranch('CIVIL')">
-                <div class="icon">🏗️</div>
-                <h3>CIVIL</h3>
-                <p>Civil Engineering</p>
-            </div>
-
+            <a href="pdfs/UHV.pdf" download class="download">
+                ⬇ Download PDF
+            </a>
         </div>
+    </div>
 
-    </section>
 
+    <!-- OOPJ -->
+    <div class="subject">
+        <h2>OOPJ</h2>
+        <div class="faculty">Faculty: Ramakrishna</div>
 
-    <!-- ================= CSE ================= -->
+        <div class="buttons">
+            <a href="pdfs/OOPJ.pdf" target="_blank">
+                📄 View PDF
+            </a>
 
-    <section id="cse" class="page-section hidden">
-
-        <button class="back-button" onclick="showCoursePacks()">
-            ← Branches
-        </button>
-
-        <h2>💻 CSE Course Pack</h2>
-
-        <div class="message-card">
-            <h3>CSE Course Materials</h3>
-            <p>
-                CSE subject course packs can be added here.
-            </p>
+            <a href="pdfs/OOPJ.pdf" download class="download">
+                ⬇ Download PDF
+            </a>
         </div>
-
-    </section>
-
-
-    <!-- ================= CSE AI SUBJECTS ================= -->
-
-    <section id="cse-ai" class="page-section hidden">
-
-        <button class="back-button" onclick="showCoursePacks()">
-            ← Branches
-        </button>
-
-        <h2>🤖 CSE (AI)</h2>
-
-        <p class="intro">
-            Select a subject to open its course pack.
-        </p>
-
-        <div class="card-container">
-
-            <!-- ADSA -->
-
-            <div class="subject-card"
-                 onclick="showSubject('ADSA')">
-
-                <div class="subject-icon">🔢</div>
-
-                <h3>ADSA</h3>
-
-                <p>Ranganayakulamma</p>
-
-                <span>Open Course Pack →</span>
-
-            </div>
+    </div>
 
 
-            <!-- DMGT -->
+    <!-- DMGT -->
+    <div class="subject">
+        <h2>DMGT</h2>
+        <div class="faculty">Faculty: Venkat</div>
 
-            <div class="subject-card"
-                 onclick="showSubject('DMGT')">
+        <div class="buttons">
+            <a href="pdfs/DMGT.pdf" target="_blank">
+                📄 View PDF
+            </a>
 
-                <div class="subject-icon">🔢</div>
-
-                <h3>DMGT</h3>
-
-                <p>Venkat Naidu</p>
-
-                <span>Open Course Pack →</span>
-
-            </div>
-
-
-            <!-- OOPJ -->
-
-            <div class="subject-card"
-                 onclick="showSubject('OOPJ')">
-
-                <div class="subject-icon">☕</div>
-
-                <h3>OOPJ</h3>
-
-                <p>Rama Krishna</p>
-
-                <span>Open Course Pack →</span>
-
-            </div>
-
-
-            <!-- UHV -->
-
-            <div class="subject-card"
-                 onclick="showSubject('UHV')">
-
-                <div class="subject-icon">🌱</div>
-
-                <h3>UHV</h3>
-
-                <p>Nitya</p>
-
-                <span>Open Course Pack →</span>
-
-            </div>
-
-
-            <!-- AI -->
-
-            <div class="subject-card"
-                 onclick="showSubject('AI')">
-
-                <div class="subject-icon">🤖</div>
-
-                <h3>AI</h3>
-
-                <p>M. Sameena Nazeer</p>
-
-                <span>Open Course Pack →</span>
-
-            </div>
-
+            <a href="pdfs/DMGT.pdf" download class="download">
+                ⬇ Download PDF
+            </a>
         </div>
+    </div>
 
-    </section>
 
+    <!-- AI -->
+    <div class="subject">
+        <h2>Artificial Intelligence (AI)</h2>
+        <div class="faculty">Faculty: Sameena</div>
 
-    <!-- ================= SUBJECT COURSE PACK ================= -->
+        <div class="buttons">
+            <a href="pdfs/AI.pdf" target="_blank">
+                📄 View PDF
+            </a>
 
-    <section id="subject-pack" class="page-section hidden">
-
-        <button class="back-button" onclick="showBranch('CSE-AI')">
-            ← CSE (AI) Subjects
-        </button>
-
-        <div id="subject-content">
-
-            <!-- JavaScript will insert subject content here -->
-
+            <a href="pdfs/AI.pdf" download class="download">
+                ⬇ Download PDF
+            </a>
         </div>
+    </div>
 
-    </section>
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <h3>🎓 Ashoka Course Packs</h3>
-
-    <p>
-        CSE • CSE(AI) • ECE • EEE • CIVIL
-    </p>
-
-    <p>
-        © 2026 Ashoka Course Packs
-    </p>
-
-</footer>
-
-
-<script src="script.js"></script>
+</div>
+```
 
 </body>
 </html>
