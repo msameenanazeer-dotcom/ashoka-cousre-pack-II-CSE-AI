@@ -196,26 +196,75 @@ function showSubject(subject) {
 
     const data = subjectData[subject];
 
-    const content =
-        document.getElementById("subject-content");
+    const content = document.getElementById("subject-content");
+
+    let pdfFile = "";
+
+    if (subject === "ADSA") {
+        pdfFile = "pdfs/ADSA-Course-Pack.pdf";
+    }
+
+    else if (subject === "DMGT") {
+        pdfFile = "pdfs/DMGT-Course-Pack.pdf";
+    }
+
+    else if (subject === "OOPJ") {
+        pdfFile = "pdfs/OOPJ-Course-Pack.pdf";
+    }
+
+    else if (subject === "UHV") {
+        pdfFile = "pdfs/UHV-Course-Pack.pdf";
+    }
+
+    else if (subject === "AI") {
+        pdfFile = "pdfs/AI-Course-Pack.pdf";
+    }
 
 
-    /* MODULE LIST */
+    content.innerHTML = `
 
-    let moduleHTML = "";
+        <div class="course-pack-simple">
 
-    data.modules.forEach(
-        function(module, index) {
+            <div class="subject-large-icon">
+                ${data.icon}
+            </div>
 
-            moduleHTML +=
-                `
-                <li>
-                    <b>Module ${index + 1}:</b>
-                    ${module}
-                </li>
-                `;
-        }
-    );
+            <h1>${data.name} Course Pack</h1>
+
+            <h2>${data.description}</h2>
+
+            <p class="faculty">
+                Faculty: <strong>${data.faculty}</strong>
+            </p>
+
+
+            <div class="pdf-buttons">
+
+                <a href="${pdfFile}"
+                   target="_blank"
+                   class="view-pdf">
+                    👁️ View PDF
+                </a>
+
+
+                <a href="${pdfFile}"
+                   download
+                   class="download-pdf">
+                    📥 Download PDF
+                </a>
+
+            </div>
+
+        </div>
+
+    `;
+
+    document
+        .getElementById("subject-pack")
+        .classList.remove("hidden");
+
+    window.scrollTo(0, 0);
+}
 
 
     /* COURSE PACK PAGE */
