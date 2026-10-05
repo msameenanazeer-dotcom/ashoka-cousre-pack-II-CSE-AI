@@ -1,220 +1,527 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
-    <link rel="manifest" href="manifest.json">
-
-<meta name="theme-color" content="#2563eb">
-
-<script>
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-        navigator.serviceWorker.register("sw.js")
-            .then(function () {
-                console.log("Service Worker registered");
-            })
-            .catch(function (error) {
-                console.log("Service Worker registration failed:", error);
-            });
-    });
-}
-</script>
-
 <head>
-    <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#2563eb">
-
-<script>
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw.js");
-    });
-}
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Ashoka Course Pack - II CSE AI</title>
 
-<title>Ashoka Course Pack - II CSE AI</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f6f8;
-        margin: 0;
-        padding: 40px 20px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    h1 {
-        text-align: center;
-        color: #222;
-        margin-bottom: 8px;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
 
-    .subtitle {
-        text-align: center;
-        color: #666;
-        margin-bottom: 35px;
-    }
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #172554, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
 
-    .subjects {
-        max-width: 700px;
-        margin: auto;
-    }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-    .subject {
-        background: white;
-        margin-bottom: 20px;
-        padding: 22px;
-        border-radius: 12px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-    }
+        header p {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
 
-    .subject h2 {
-        margin: 0 0 8px;
-        color: #1f2937;
-    }
+        header .subtitle {
+            font-size: 15px;
+            opacity: 0.9;
+        }
 
-    .faculty {
-        color: #666;
-        margin-bottom: 18px;
-    }
+        /* NAVIGATION */
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #1d4ed8;
+            font-weight: bold;
+            margin: 5px 12px;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
 
-    .buttons a {
-        padding: 11px 20px;
-        border-radius: 7px;
-        text-decoration: none;
-        color: white;
-        background: #2563eb;
-    }
+        nav a:hover {
+            background: #e0ecff;
+        }
 
-    .buttons a:hover {
-        opacity: 0.85;
-    }
+        /* MAIN */
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
 
-    .download {
-        background: #16a34a !important;
-    }
-</style>
-```
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
+        .section-title h2 {
+            color: #172554;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #555;
+        }
+
+        /* COURSE GRID */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* COURSE CARD */
+        .course-card {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-top: 5px solid #2563eb;
+        }
+
+        .course-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .course-card h3 {
+            color: #172554;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .faculty {
+            font-size: 16px;
+            margin-bottom: 18px;
+            color: #444;
+        }
+
+        .faculty strong {
+            color: #1d4ed8;
+        }
+
+        .description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 22px;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 11px 16px;
+            border-radius: 9px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .view-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .view-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .download-btn {
+            background: #16a34a;
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: #15803d;
+        }
+
+        /* INFO SECTION */
+        .info {
+            background: white;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .info h2 {
+            color: #172554;
+            margin-bottom: 12px;
+        }
+
+        .info p {
+            color: #555;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 50px;
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 17px;
+            }
+
+            nav a {
+                margin: 3px;
+                font-size: 14px;
+            }
+
+            .course-card {
+                padding: 22px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<h1>📚 Ashoka Course Pack</h1>
-<div class="subtitle">II CSE - Artificial Intelligence</div>
+    <!-- HEADER -->
+    <header>
+        <h1>📚 Ashoka Course Pack</h1>
 
-<div class="subjects">
+        <p>II CSE - Artificial Intelligence</p>
 
-    <!-- ADSA -->
-    <div class="subject">
-        <h2>ADSA</h2>
-        <div class="faculty">Faculty: Rangi Mam</div>
-
-        <div class="buttons">
-            <a href="https://drive.google.com/file/d/1buCgta5qXGmXc-WG6QCcrsesLHekMLfk/view?usp=sharing"
-               target="_blank">
-                📄 View PDF
-            </a>
-
-            <a href="https://drive.google.com/uc?export=download&id=1buCgta5qXGmXc-WG6QCcrsesLHekMLfk"
-               target="_blank"
-               class="download">
-                ⬇ Download PDF
-            </a>
+        <div class="subtitle">
+            Learn Anywhere • Access Notes • Download Study Material
         </div>
-    </div>
+    </header>
 
 
-    <!-- UHV -->
-    <div class="subject">
-        <h2>UHV</h2>
-        <div class="faculty">Faculty: Nitya</div>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#courses">📚 Courses</a>
+        <a href="#notes">📄 Notes</a>
+        <a href="#about">ℹ️ About</a>
+    </nav>
 
-        <div class="buttons">
-            <a href="https://drive.google.com/file/d/1KiZjDibbhkf60f9XXvN_k_4F_gUCPqfP/view?usp=sharing"
-               target="_blank">
-                📄 View PDF
-            </a>
 
-            <a href="https://drive.google.com/uc?export=download&id=1KiZjDibbhkf60f9XXvN_k_4F_gUCPqfP"
-               target="_blank"
-               class="download">
-                ⬇ Download PDF
-            </a>
+    <!-- COURSES -->
+    <main class="container" id="courses">
+
+        <div class="section-title">
+            <h2>📚 Course Materials</h2>
+
+            <p>
+                Access subject-wise notes and study materials
+            </p>
         </div>
-    </div>
 
 
-    <!-- OOPJ -->
-    <div class="subject">
-        <h2>OOPJ</h2>
-        <div class="faculty">Faculty: Ramakrishna</div>
+        <div class="course-grid">
 
-        <div class="buttons">
-            <a href="https://drive.google.com/file/d/11R-O_fkKif1Ez0LB5D08x7ujKz9piXAz/view?usp=sharing"
-               target="_blank">
-                📄 View PDF
-            </a>
 
-            <a href="https://drive.google.com/uc?export=download&id=11R-O_fkKif1Ez0LB5D08x7ujKz9piXAz"
-               target="_blank"
-               class="download">
-                ⬇ Download PDF
-            </a>
+            <!-- ADSA -->
+            <div class="course-card">
+
+                <div class="icon">💻</div>
+
+                <h3>ADSA</h3>
+
+                <div class="faculty">
+                    👩‍🏫 Faculty:
+                    <strong>K SWETHA</strong>
+                </div>
+
+                <p class="description">
+                    Advanced Data Structures and Algorithms study material,
+                    notes and course resources.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="PASTE_ADSA_GOOGLE_DRIVE_VIEW_LINK_HERE"
+                        target="_blank"
+                        class="btn view-btn">
+                        📄 View PDF
+                    </a>
+
+                    <a
+                        href="PASTE_ADSA_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
+                        target="_blank"
+                        class="btn download-btn">
+                        ⬇ Download PDF
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- UHV -->
+            <div class="course-card">
+
+                <div class="icon">🌱</div>
+
+                <h3>UHV</h3>
+
+                <div class="faculty">
+                    👩‍🏫 Faculty:
+                    <strong>Nitya</strong>
+                </div>
+
+                <p class="description">
+                    Universal Human Values course notes,
+                    study material and learning resources.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="PASTE_UHV_GOOGLE_DRIVE_VIEW_LINK_HERE"
+                        target="_blank"
+                        class="btn view-btn">
+                        📄 View PDF
+                    </a>
+
+                    <a
+                        href="PASTE_UHV_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
+                        target="_blank"
+                        class="btn download-btn">
+                        ⬇ Download PDF
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OOPJ -->
+            <div class="course-card">
+
+                <div class="icon">☕</div>
+
+                <h3>OOPJ</h3>
+
+                <div class="faculty">
+                    👩‍🏫 Faculty:
+                    <strong>Ramakrishna</strong>
+                </div>
+
+                <p class="description">
+                    Object Oriented Programming with Java,
+                    notes, programs and study resources.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="PASTE_OOPJ_GOOGLE_DRIVE_VIEW_LINK_HERE"
+                        target="_blank"
+                        class="btn view-btn">
+                        📄 View PDF
+                    </a>
+
+                    <a
+                        href="PASTE_OOPJ_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
+                        target="_blank"
+                        class="btn download-btn">
+                        ⬇ Download PDF
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DMGT -->
+            <div class="course-card">
+
+                <div class="icon">📐</div>
+
+                <h3>DMGT</h3>
+
+                <div class="faculty">
+                    👩‍🏫 Faculty:
+                    <strong>Venkat</strong>
+                </div>
+
+                <p class="description">
+                    Discrete Mathematics and Graph Theory
+                    notes and course study material.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="PASTE_DMGT_GOOGLE_DRIVE_VIEW_LINK_HERE"
+                        target="_blank"
+                        class="btn view-btn">
+                        📄 View PDF
+                    </a>
+
+                    <a
+                        href="PASTE_DMGT_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
+                        target="_blank"
+                        class="btn download-btn">
+                        ⬇ Download PDF
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIFICIAL INTELLIGENCE -->
+            <div class="course-card">
+
+                <div class="icon">🤖</div>
+
+                <h3>Artificial Intelligence (AI)</h3>
+
+                <div class="faculty">
+                    👩‍🏫 Faculty:
+                    <strong>Sameena</strong>
+                </div>
+
+                <p class="description">
+                    Artificial Intelligence concepts, search algorithms,
+                    knowledge representation and machine learning.
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="PASTE_AI_GOOGLE_DRIVE_VIEW_LINK_HERE"
+                        target="_blank"
+                        class="btn view-btn">
+                        📄 View PDF
+                    </a>
+
+                    <a
+                        href="PASTE_AI_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
+                        target="_blank"
+                        class="btn download-btn">
+                        ⬇ Download PDF
+                    </a>
+
+                </div>
+
+            </div>
+
+
         </div>
-    </div>
 
 
-    <!-- DMGT -->
-    <div class="subject">
-        <h2>DMGT</h2>
-        <div class="faculty">Faculty: Venkat</div>
+        <!-- NOTES -->
+        <section class="info" id="notes">
 
-        <div class="buttons">
-            <a href="https://drive.google.com/file/d/1VejseZy2FBOT9L_kef6sBKIV4fAFBnTA/view?usp=sharing"
-               target="_blank">
-                📄 View PDF
-            </a>
+            <h2>📄 Course Notes</h2>
 
-            <a href="https://drive.google.com/uc?export=download&id=1VejseZy2FBOT9L_kef6sBKIV4fAFBnTA"
-               target="_blank"
-               class="download">
-                ⬇ Download PDF
-            </a>
-        </div>
-    </div>
+            <p>
+                Select a subject above to view or download the
+                corresponding course PDF.
+            </p>
+
+            <p style="margin-top:10px;">
+                All study materials are organized subject-wise
+                for easy access.
+            </p>
+
+        </section>
 
 
-    <!-- AI -->
-    <div class="subject">
-        <h2>Artificial Intelligence (AI)</h2>
-        <div class="faculty">Faculty: Sameena</div>
+        <!-- ABOUT -->
+        <section class="info" id="about">
 
-        <div class="buttons">
-            <a href="https://drive.google.com/file/d/1Jpi4ixoqBo2ycJSiywHWm8P1Y0bHpRcV/view?usp=sharing"
-               target="_blank">
-                📄 View PDF
-            </a>
+            <h2>ℹ️ About This Course Pack</h2>
 
-            <a href="https://drive.google.com/uc?export=download&id=1Jpi4ixoqBo2ycJSiywHWm8P1Y0bHpRcV"
-               target="_blank"
-               class="download">
-                ⬇ Download PDF
-            </a>
-        </div>
-    </div>
+            <p>
+                This webpage provides centralized access to course
+                materials for II CSE - Artificial Intelligence.
+            </p>
 
-</div>
-```
+            <p style="margin-top:10px;">
+                Students can view and download subject-wise PDFs
+                from the buttons provided above.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>🎓 Ashoka Course Pack</p>
+
+        <p>II CSE - Artificial Intelligence</p>
+
+        <p>© 2026</p>
+
+    </footer>
+
 
 </body>
 </html>
+```
