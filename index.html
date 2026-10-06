@@ -2,526 +2,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ashoka Course Pack - II CSE AI</title>
+<title>AI Lab | Artificial Intelligence Laboratory</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* =========================
+   GENERAL
+========================= */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-            line-height: 1.6;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #172554, #2563eb);
-            color: white;
-            text-align: center;
-            padding: 45px 20px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
 
-        header p {
-            font-size: 19px;
-            margin-bottom: 8px;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        header .subtitle {
-            font-size: 15px;
-            opacity: 0.9;
-        }
+.header {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+    padding: 25px 20px 35px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+}
 
-        /* NAVIGATION */
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.header .logo {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    background: white;
+    color: #4b6cb7;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
-        nav a {
-            display: inline-block;
-            text-decoration: none;
-            color: #1d4ed8;
-            font-weight: bold;
-            margin: 5px 12px;
-            padding: 8px 12px;
-            border-radius: 8px;
-        }
+.header h1 {
+    margin-top: 15px;
+    font-size: 30px;
+}
 
-        nav a:hover {
-            background: #e0ecff;
-        }
+.header p {
+    margin-top: 8px;
+    font-size: 15px;
+    opacity: 0.9;
+}
 
-        /* MAIN */
-        .container {
-            width: 92%;
-            max-width: 1100px;
-            margin: 35px auto;
-        }
+/* =========================
+   MAIN CONTAINER
+========================= */
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.container {
+    width: 92%;
+    max-width: 1000px;
+    margin: -20px auto 40px;
+}
 
-        .section-title h2 {
-            color: #172554;
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
+/* =========================
+   WELCOME CARD
+========================= */
 
-        .section-title p {
-            color: #555;
-        }
+.welcome {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-        /* COURSE GRID */
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+.welcome h2 {
+    color: #263b70;
+    margin-bottom: 8px;
+}
 
-        /* COURSE CARD */
-        .course-card {
-            background: white;
-            border-radius: 18px;
-            padding: 28px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            border-top: 5px solid #2563eb;
-        }
+.welcome p {
+    color: #666;
+    line-height: 1.6;
+}
 
-        .course-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+/* =========================
+   SECTION TITLE
+========================= */
 
-        .icon {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+.section-title {
+    font-size: 22px;
+    margin: 25px 0 15px;
+    color: #263b70;
+}
 
-        .course-card h3 {
-            color: #172554;
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
+/* =========================
+   APP GRID
+========================= */
 
-        .faculty {
-            font-size: 16px;
-            margin-bottom: 18px;
-            color: #444;
-        }
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
 
-        .faculty strong {
-            color: #1d4ed8;
-        }
+.app-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    border: 1px solid #eeeeee;
+}
 
-        .description {
-            color: #666;
-            font-size: 15px;
-            margin-bottom: 22px;
-        }
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.13);
+}
 
-        /* BUTTONS */
-        .buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+.app-icon {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background: #eef2ff;
+}
 
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 11px 16px;
-            border-radius: 9px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.2s;
-        }
+.app-card h3 {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #263b70;
+}
 
-        .view-btn {
-            background: #2563eb;
-            color: white;
-        }
+.app-card p {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+}
 
-        .view-btn:hover {
-            background: #1d4ed8;
-        }
+/* =========================
+   AI PROBLEMS
+========================= */
 
-        .download-btn {
-            background: #16a34a;
-            color: white;
-        }
+.problem-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
 
-        .download-btn:hover {
-            background: #15803d;
-        }
+.problem {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        /* INFO SECTION */
-        .info {
-            background: white;
-            margin-top: 40px;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        }
+.problem:hover {
+    transform: translateX(4px);
+    background: #f8f9ff;
+}
 
-        .info h2 {
-            color: #172554;
-            margin-bottom: 12px;
-        }
+.problem-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #e9edff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
 
-        .info p {
-            color: #555;
-        }
+.problem span {
+    font-weight: bold;
+    font-size: 14px;
+}
 
-        /* FOOTER */
-        footer {
-            margin-top: 50px;
-            background: #172554;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+/* =========================
+   NOTICE CARD
+========================= */
 
-        footer p {
-            margin: 5px;
-        }
+.notice {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #fff, #eef2ff);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
 
-        /* MOBILE */
-        @media (max-width: 600px) {
+.notice h3 {
+    color: #263b70;
+    margin-bottom: 10px;
+}
 
-            header h1 {
-                font-size: 28px;
-            }
+.notice p {
+    color: #555;
+    line-height: 1.6;
+}
 
-            header p {
-                font-size: 17px;
-            }
+/* =========================
+   ABOUT
+========================= */
 
-            nav a {
-                margin: 3px;
-                font-size: 14px;
-            }
+.about {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    margin-top: 25px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
 
-            .course-card {
-                padding: 22px;
-            }
+.about h2 {
+    color: #263b70;
+    margin-bottom: 12px;
+}
 
-            .buttons {
-                flex-direction: column;
-            }
+.about p {
+    line-height: 1.7;
+    color: #555;
+}
 
-            .btn {
-                text-align: center;
-                width: 100%;
-            }
-        }
-    </style>
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 22px 15px 30px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .app-card {
+        padding: 16px 10px;
+    }
+
+    .app-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .problem-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 800px) {
+
+    .app-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .problem-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>📚 Ashoka Course Pack</h1>
+<!-- =========================
+     HEADER
+========================= -->
 
-        <p>II CSE - Artificial Intelligence</p>
+<header class="header">
 
-        <div class="subtitle">
-            Learn Anywhere • Access Notes • Download Study Material
-        </div>
-    </header>
+    <div class="logo">
+        AI
+    </div>
 
+    <h1>AI LAB</h1>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="#courses">📚 Courses</a>
-        <a href="#notes">📄 Notes</a>
-        <a href="#about">ℹ️ About</a>
-    </nav>
+    <p>
+        Artificial Intelligence & Machine Learning Laboratory
+    </p>
 
+</header>
 
-    <!-- COURSES -->
-    <main class="container" id="courses">
 
-        <div class="section-title">
-            <h2>📚 Course Materials</h2>
+<div class="container">
 
-            <p>
-                Access subject-wise notes and study materials
-            </p>
-        </div>
+<!-- =========================
+     WELCOME
+========================= -->
 
+<section class="welcome">
 
-        <div class="course-grid">
+    <h2>Welcome to AI Lab</h2>
 
+    <p>
+        Learn Artificial Intelligence and Machine Learning through
+        interactive problems, programs, notes and practical experiments.
+    </p>
 
-            <!-- ADSA -->
-            <div class="course-card">
+</section>
 
-                <div class="icon">💻</div>
 
-                <h3>ADSA</h3>
+<!-- =========================
+     QUICK ACCESS
+========================= -->
 
-                <div class="faculty">
-                    👩‍🏫 Faculty:
-                    <strong>K SWETHA</strong>
-                </div>
+<h2 class="section-title">
+    🚀 Quick Access
+</h2>
 
-                <p class="description">
-                    Advanced Data Structures and Algorithms study material,
-                    notes and course resources.
-                </p>
+<div class="app-grid">
 
-                <div class="buttons">
+    <!-- AI NOTES -->
 
-                    <a
-                        href="PASTE_ADSA_GOOGLE_DRIVE_VIEW_LINK_HERE"
-                        target="_blank"
-                        class="btn view-btn">
-                        📄 View PDF
-                    </a>
+    <a class="app-card" href="AI-Notes.html">
 
-                    <a
-                        href="PASTE_ADSA_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
-                        target="_blank"
-                        class="btn download-btn">
-                        ⬇ Download PDF
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- UHV -->
-            <div class="course-card">
-
-                <div class="icon">🌱</div>
-
-                <h3>UHV</h3>
-
-                <div class="faculty">
-                    👩‍🏫 Faculty:
-                    <strong>Nitya</strong>
-                </div>
-
-                <p class="description">
-                    Universal Human Values course notes,
-                    study material and learning resources.
-                </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="PASTE_UHV_GOOGLE_DRIVE_VIEW_LINK_HERE"
-                        target="_blank"
-                        class="btn view-btn">
-                        📄 View PDF
-                    </a>
-
-                    <a
-                        href="PASTE_UHV_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
-                        target="_blank"
-                        class="btn download-btn">
-                        ⬇ Download PDF
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- OOPJ -->
-            <div class="course-card">
-
-                <div class="icon">☕</div>
-
-                <h3>OOPJ</h3>
-
-                <div class="faculty">
-                    👩‍🏫 Faculty:
-                    <strong>Ramakrishna</strong>
-                </div>
-
-                <p class="description">
-                    Object Oriented Programming with Java,
-                    notes, programs and study resources.
-                </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="PASTE_OOPJ_GOOGLE_DRIVE_VIEW_LINK_HERE"
-                        target="_blank"
-                        class="btn view-btn">
-                        📄 View PDF
-                    </a>
-
-                    <a
-                        href="PASTE_OOPJ_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
-                        target="_blank"
-                        class="btn download-btn">
-                        ⬇ Download PDF
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- DMGT -->
-            <div class="course-card">
-
-                <div class="icon">📐</div>
-
-                <h3>DMGT</h3>
-
-                <div class="faculty">
-                    👩‍🏫 Faculty:
-                    <strong>Venkat</strong>
-                </div>
-
-                <p class="description">
-                    Discrete Mathematics and Graph Theory
-                    notes and course study material.
-                </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="PASTE_DMGT_GOOGLE_DRIVE_VIEW_LINK_HERE"
-                        target="_blank"
-                        class="btn view-btn">
-                        📄 View PDF
-                    </a>
-
-                    <a
-                        href="PASTE_DMGT_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
-                        target="_blank"
-                        class="btn download-btn">
-                        ⬇ Download PDF
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- ARTIFICIAL INTELLIGENCE -->
-            <div class="course-card">
-
-                <div class="icon">🤖</div>
-
-                <h3>Artificial Intelligence (AI)</h3>
-
-                <div class="faculty">
-                    👩‍🏫 Faculty:
-                    <strong>Sameena</strong>
-                </div>
-
-                <p class="description">
-                    Artificial Intelligence concepts, search algorithms,
-                    knowledge representation and machine learning.
-                </p>
-
-                <div class="buttons">
-
-                    <a
-                        href="PASTE_AI_GOOGLE_DRIVE_VIEW_LINK_HERE"
-                        target="_blank"
-                        class="btn view-btn">
-                        📄 View PDF
-                    </a>
-
-                    <a
-                        href="PASTE_AI_GOOGLE_DRIVE_DOWNLOAD_LINK_HERE"
-                        target="_blank"
-                        class="btn download-btn">
-                        ⬇ Download PDF
-                    </a>
-
-                </div>
-
-            </div>
-
-
+        <div class="app-icon">
+            📚
         </div>
 
+        <h3>AI Notes</h3>
 
-        <!-- NOTES -->
-        <section class="info" id="notes">
+        <p>
+            Artificial Intelligence study material and notes
+        </p>
 
-            <h2>📄 Course Notes</h2>
-
-            <p>
-                Select a subject above to view or download the
-                corresponding course PDF.
-            </p>
-
-            <p style="margin-top:10px;">
-                All study materials are organized subject-wise
-                for easy access.
-            </p>
-
-        </section>
+    </a>
 
 
-        <!-- ABOUT -->
-        <section class="info" id="about">
+    <!-- AI PROBLEMS -->
 
-            <h2>ℹ️ About This Course Pack</h2>
+    <a class="app-card" href="#problems">
 
-            <p>
-                This webpage provides centralized access to course
-                materials for II CSE - Artificial Intelligence.
-            </p>
+        <div class="app-icon">
+            🧩
+        </div>
 
-            <p style="margin-top:10px;">
-                Students can view and download subject-wise PDFs
-                from the buttons provided above.
-            </p>
+        <h3>AI Problems</h3>
 
-        </section>
+        <p>
+            Solve interactive AI problems
+        </p>
 
-    </main>
+    </a>
 
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- PROGRAMS -->
 
-        <p>🎓 Ashoka Course Pack</p>
+    <a class="app-card" href="Programs.html">
 
-        <p>II CSE - Artificial Intelligence</p>
+        <div class="app-icon">
+            💻
+        </div>
 
-        <p>© 2026</p>
+        <h3>Programs</h3>
 
-    </footer>
+        <p>
+            Python and AI laboratory programs
+        </p>
+
+    </a>
+
+
+    <!-- ONLINE CLASSES -->
+
+    <a class="app-card" href="Online-Classes.html">
+
+        <div class="app-icon">
+            🎓
+        </div>
+
+        <h3>Online Classes</h3>
+
+        <p>
+            Online learning resources
+        </p>
+
+    </a>
+
+
+    <!-- DOWNLOADS -->
+
+    <a class="app-card" href="Downloads.html">
+
+        <div class="app-icon">
+            📥
+        </div>
+
+        <h3>Downloads</h3>
+
+        <p>
+            Lab manuals, PDFs and resources
+        </p>
+
+    </a>
+
+
+    <!-- ABOUT -->
+
+    <a class="app-card" href="#about">
+
+        <div class="app-icon">
+            ℹ️
+        </div>
+
+        <h3>About</h3>
+
+        <p>
+            About the AI Laboratory
+        </p>
+
+    </a>
+
+</div>
+
+
+<!-- =========================
+     AI PROBLEMS
+========================= -->
+
+<h2 class="section-title" id="problems">
+    🧠 AI Interactive Problems
+</h2>
+
+<div class="problem-list">
+
+
+    <!-- WATER JUG -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/Water-Jug-Problem/"
+       target="_blank">
+
+        <div class="problem-icon">
+            💧
+        </div>
+
+        <span>
+            Water Jug Problem
+        </span>
+
+    </a>
+
+
+    <!-- VACUUM CLEANER -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/Vacuum-Cleaner-Toy/"
+       target="_blank">
+
+        <div class="problem-icon">
+            🧹
+        </div>
+
+        <span>
+            Vacuum Cleaner
+        </span>
+
+    </a>
+
+
+    <!-- 8 PUZZLE -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/puzzle-eight-new/"
+       target="_blank">
+
+        <div class="problem-icon">
+            🧩
+        </div>
+
+        <span>
+            8-Puzzle Problem
+        </span>
+
+    </a>
+
+
+    <!-- MISSIONARIES -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/Missionaries-and-Cannibals/"
+       target="_blank">
+
+        <div class="problem-icon">
+            ⛵
+        </div>
+
+        <span>
+            Missionaries & Cannibals
+        </span>
+
+    </a>
+
+
+    <!-- BFS -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/Breadth-First-Search/"
+       target="_blank">
+
+        <div class="problem-icon">
+            🌳
+        </div>
+
+        <span>
+            Breadth First Search
+        </span>
+
+    </a>
+
+
+    <!-- 8 QUEENS -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/-8-Queens-Problem/"
+       target="_blank">
+
+        <div class="problem-icon">
+            ♛
+        </div>
+
+        <span>
+            8 Queens Problem
+        </span>
+
+    </a>
+
+
+    <!-- AND OR GRAPH -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/AND-OR-graph-algorithm/"
+       target="_blank">
+
+        <div class="problem-icon">
+            🔗
+        </div>
+
+        <span>
+            AND-OR Graph
+        </span>
+
+    </a>
+
+
+    <!-- TSP -->
+
+    <a class="problem"
+       href="https://msameenanazeer-dotcom.github.io/Andhra-Pradesh-city-TSP-project-/"
+       target="_blank">
+
+        <div class="problem-icon">
+            🗺️
+        </div>
+
+        <span>
+            TSP – Travelling Salesman
+        </span>
+
+    </a>
+
+</div>
+
+
+<!-- =========================
+     NOTICE
+========================= -->
+
+<div class="notice">
+
+    <h3>
+        💡 AI Laboratory
+    </h3>
+
+    <p>
+        This website provides students with interactive Artificial
+        Intelligence problems, laboratory programs, study notes,
+        online learning resources and downloadable materials.
+    </p>
+
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <h2>
+        About AI Lab
+    </h2>
+
+    <p>
+
+        The AI Laboratory is designed to help students understand
+        Artificial Intelligence concepts through practical,
+        interactive and visual learning.
+
+        Students can explore search algorithms, problem solving,
+        knowledge representation, machine learning and other
+        AI concepts through examples and laboratory programs.
+
+    </p>
+
+</section>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 AI Lab
+    </p>
+
+    <p>
+        Artificial Intelligence & Machine Learning Laboratory
+    </p>
+
+</footer>
 
 
 </body>
 </html>
-```
